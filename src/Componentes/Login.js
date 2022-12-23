@@ -1,4 +1,5 @@
 import axios from "axios";
+import swAlert from '@sweetalert/with-react'
 
 function Login() {
   const submitHandler = (e) => {
@@ -9,11 +10,15 @@ function Login() {
       /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
 
     if (email === "" || password === "") {
-      console.log("Campos vacios");
+        swAlert(
+            <h2>Los campos no pueden estar vacios</h2>
+          )
       return;
     }
     if (email !== "" && !regexEmail.test(email)) {
-      console.log("escribe bien");
+        swAlert(
+            <h2>Escribe bien el email</h2>
+          )
       return;
     }
     if (email !== "challenge@alkemy.org" || password !== "react") {
@@ -26,6 +31,8 @@ function Login() {
         console.log(res.data);
       });
   };
+
+ 
   return (
     <>
       <h2>Formulario Login</h2>
