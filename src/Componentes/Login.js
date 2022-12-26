@@ -1,7 +1,13 @@
 import axios from "axios";
-import swAlert from '@sweetalert/with-react'
+import swAlert from "@sweetalert/with-react";
+
+import {  useNavigate } from "react-router-dom";
+
 
 function Login() {
+
+  const history=useNavigate()
+
   const submitHandler = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -10,37 +16,38 @@ function Login() {
       /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
 
     if (email === "" || password === "") {
-        swAlert(
-            <h2>Los campos no pueden estar vacios</h2>
-          )
+      swAlert("ERROR", "Los campos no pueden estar vacios", "warning");
       return;
     }
     if (email !== "" && !regexEmail.test(email)) {
-        swAlert(
-            <h2>Escribe bien el email</h2>
-          )
+      swAlert("ERROR", "Escribe bien el email", "warning");
       return;
     }
     if (email !== "challenge@alkemy.org" || password !== "react") {
-      console.log("Credenciales incorrectas");
+      swAlert("ERROR", "Credenciales incorrectas", "warning");
       return;
     }
+    
     axios
       .post("http://challenge-react.alkemy.org", { email, password })
       .then((res) => {
-        console.log(res.data);
+        
+        const tokenRecibido = res.data.token;
+        localStorage.setItem("token", tokenRecibido);
+        
+        history('/home')
       });
   };
 
- 
   return (
     <>
+    
       <h2>Formulario Login</h2>
       <form onSubmit={submitHandler}>
         <label>
           <span>Correo Electrónico</span>
           <br />
-          <input type="text" name="email"></input>
+          <input type="email" name="email"></input>
         </label>
         <br />
         <label>
@@ -51,6 +58,7 @@ function Login() {
         <br />
         <button type="submit">Ingresar</button>
       </form>
+      
     </>
   );
 }
