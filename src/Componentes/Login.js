@@ -33,9 +33,9 @@ function Login() {
       .then((res) => {
         
         const tokenRecibido = res.data.token;
-        localStorage.setItem("token", tokenRecibido);
+        sessionStorage.setItem("token", tokenRecibido);
         
-        history('/home')
+        history('/Home')
       });
   };
 

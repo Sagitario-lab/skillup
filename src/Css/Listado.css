@@ -1,0 +1,34 @@
+.cont{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.movie-img{
+    max-width: 250px;
+}
+.img-title{
+    max-height: 80%;
+
+}
+.film-cont{
+    width: 15%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+    align-items:center
+}
+.description{
+    font-size: 0.8rem;
+}
+.title{
+    font-size: 1.3rem;
+}
+.title-rate{
+    display: flex;
+    justify-content: space-around;
+   
+}
+.vermas{
+    align-self:center;
+}

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 function Home(){
      
-    const unlog=()=>localStorage.clear()
+    const unlog=()=>sessionStorage.clear()
 
     return(
         <>
