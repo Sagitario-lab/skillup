@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+.header-gen-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  height: 12vh;
+  position: sticky;
+  top: 0;
+}
+ul {
+  list-style: none;
+}
+.header-film-icon {
+  max-width: 150px;
+}
+.header-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.header-nav {
+  width: 20%;
+}
+.header-link-list {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+.header-link {
+  text-decoration: none;
+}
+.header-link:focus {
+  color: white;
+}
+
+.Link {
+  font-family: "Dancing Script", cursive;
+  font-weight: 800;
+  font-size: x-large;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.Link:hover{
+  color:rgb(102, 102, 218);
+}
+.Link:active{
+  color:rgb(57, 57, 252);
+}

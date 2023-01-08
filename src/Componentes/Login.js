@@ -1,12 +1,11 @@
 import axios from "axios";
 import swAlert from "@sweetalert/with-react";
-
-import {  useNavigate } from "react-router-dom";
-
+import "../Css/Login.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-
-  const history=useNavigate()
+  const history = useNavigate();
+  
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -27,38 +26,45 @@ function Login() {
       swAlert("ERROR", "Credenciales incorrectas", "warning");
       return;
     }
-    
+
     axios
       .post("http://challenge-react.alkemy.org", { email, password })
       .then((res) => {
-        
         const tokenRecibido = res.data.token;
         sessionStorage.setItem("token", tokenRecibido);
-        
-        history('/Home')
+
+        history("/Listado");
       });
   };
 
   return (
     <>
-    
-      <h2>Formulario Login</h2>
-      <form onSubmit={submitHandler}>
-        <label>
-          <span>Correo Electrónico</span>
+      <div className="Login-cont">
+        <h2 className="Login-title">
+          Discover <br></br> new films
+        </h2>
+        <form onSubmit={submitHandler}>
+          <div>
+            <span className="login-text">E-Mail</span>
+            <br />
+            <input type="email" name="email" className="login-input" placeholder="challenge@alkemy.org"></input>
+          </div>
           <br />
-          <input type="email" name="email"></input>
-        </label>
-        <br />
-        <label>
-          <span>Contraseña</span>
+          <div>
+            <span>Password</span>
+            <br />
+            <input
+              type="password"
+              name="password"
+              className="login-input" placeholder="react"
+            ></input>
+          </div>
           <br />
-          <input type="password" name="password"></input>
-        </label>
-        <br />
-        <button type="submit">Ingresar</button>
-      </form>
-      
+          <button type="submit" className="login-button">
+            Log-in
+          </button>
+        </form>
+      </div>
     </>
   );
 }

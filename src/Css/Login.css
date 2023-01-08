@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+
+.Login-title{
+    font-family: "Dancing Script", cursive;
+ 
+    font-size: 75px
+}
+.Login-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:88vh;
+    background-image: url("https://www.newstatesman.com/wp-content/uploads/sites/2/2021/12/2ATHYW0-1038x778.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.login-input{
+    border-radius: 5%;
+    font-size: medium;
+    background-color: rgb(255, 255, 255);
+    border-color: rgba(0, 0, 0, 0.295);
+    
+    padding: 5px;
+}
+
+.login-button {
+    border-radius: 5%;
+    border: none;
+    font-size: larger;
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.253);
+  }

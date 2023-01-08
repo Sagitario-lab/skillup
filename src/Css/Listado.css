@@ -1,34 +1,63 @@
-.cont{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-.movie-img{
-    max-width: 250px;
-}
-.img-title{
-    max-height: 80%;
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
+.cont {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  padding-top: 1%;
+  background-image: linear-gradient(rgb(102, 102, 218), rgb(255, 255, 255));
 }
-.film-cont{
-    width: 15%;
-    margin-bottom: 1%;
-    display: flex;
-    flex-direction: column;
-   justify-content: space-between;
-    align-items:center
+.movie-img {
+  max-width: 200px;
 }
-.description{
-    font-size: 0.8rem;
+.img-title {
+  max-height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
-.title{
-    font-size: 1.3rem;
+.film-cont {
+  width: 15%;
+  margin-bottom: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.title-rate{
-    display: flex;
-    justify-content: space-around;
-   
+.description {
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 50px;
 }
-.vermas{
-    align-self:center;
+.title {
+  font-size: 1.3rem;
+}
+
+.Discover {
+  font-family: "Dancing Script", cursive;
+  font-weight: 800;
+  font-size: x-large;
+  text-decoration: none;
+  color: black;
+}
+.Discover:hover {
+  color: white;
+}
+.button-fav {
+  width: 70px;
+  height: 30px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 0.5px;
+}
+.button-fav:hover {
+  background-color: rgb(198, 198, 198);
+}
+.button-fav:active {
+  background-color: rgb(102, 102, 218);
 }

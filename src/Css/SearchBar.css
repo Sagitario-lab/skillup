@@ -1,0 +1,20 @@
+.SearchBar {
+  margin-right: 10px;
+}
+.SearchBar-input{
+    border-radius: 5%;
+    font-size: medium;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    padding: 5px;
+}
+
+.SearchBar-button {
+  border-radius: 5%;
+  border: none;
+  font-size: larger;
+}
+.SearchBar-cont{
+    display: flex;
+    align-items: center;
+}
