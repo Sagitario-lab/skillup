@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+
+.About-cont {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    max-width: ;
+    padding: 5%;
+    height: 60vh;
+    background-image: linear-gradient(rgb(102, 102, 218), white);
+  }
+  .About-text{
+    width: 50%;
+  }
+

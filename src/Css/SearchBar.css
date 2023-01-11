@@ -14,6 +14,13 @@
   border: none;
   font-size: larger;
 }
+.SearchBar-button:hover {
+ background-color: rgb(152, 152, 152);
+}
+.SearchBar-button:active {
+ background-color: rgb(255, 255, 255);
+}
+
 .SearchBar-cont{
     display: flex;
     align-items: center;

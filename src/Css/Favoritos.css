@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
-
 .Favoritos-gen-cont {
   padding: 1%;
   display: flex;
@@ -9,15 +8,17 @@
   height: 80vh;
   background-image: linear-gradient(rgb(102, 102, 218), white);
 }
-
-
-.detalles{
-    font-family: "Dancing Script", cursive;
-    font-weight: 600;
-    color: black;
-    text-decoration: none;
-    font-size: 1.5rem;
+.detalles {
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
-.detalles:hover{
-    color: rgb(92, 136, 231);
+.detalles:hover {
+  color: rgb(92, 136, 231);
+}
+.favourites-none{
+  font-size: 1.5rem;
+  font-weight: 600;
 }

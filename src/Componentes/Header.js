@@ -10,17 +10,17 @@ function Header() {
       <nav className="header-nav">
         <ul className="header-link-list">
           <li className="header-link">
-            <Link to={"/Listado"} className="Link">
-              Listado
+            <Link to={"/listado"} className="Link">
+              List
             </Link>
           </li>
           <li className="header-link">
-            <Link to={"/Favoritos"} className="Link">
-              Favoritos
+            <Link to={"/favoritos"} className="Link">
+              Favourites
             </Link>
           </li>
           <li className="header-link">
-            <Link to={"/Info"} className="Link">Info</Link>
+            <Link to={"/about"} className="Link">About</Link>
           </li>
         </ul>
       </nav>

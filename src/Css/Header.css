@@ -35,7 +35,6 @@ ul {
 .header-link:focus {
   color: white;
 }
-
 .Link {
   font-family: "Dancing Script", cursive;
   font-weight: 800;
@@ -43,9 +42,9 @@ ul {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
-.Link:hover{
-  color:rgb(102, 102, 218);
+.Link:hover {
+  color: rgb(102, 102, 218);
 }
-.Link:active{
-  color:rgb(57, 57, 252);
+.Link:active {
+  color: rgb(57, 57, 252);
 }

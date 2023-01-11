@@ -73,7 +73,7 @@ function Details() {
             </div>
           </div>
           
-          <Link to={`/Listado`} className="detail-LINKS Back">
+          <Link to={`/listado`} className="detail-LINKS Back">
             List
           </Link>
         </div>

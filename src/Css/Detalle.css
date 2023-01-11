@@ -54,3 +54,9 @@
 .Back {
   font-size: 1.7rem;
 }
+
+.cont-results{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

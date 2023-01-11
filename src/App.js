@@ -1,17 +1,30 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./Componentes/Login";
 import Listado from "./Componentes/Listado";
 import Header from "./Componentes/Header";
 import Details from "./Componentes/Details";
-import Info from "./Componentes/Info";
+import About from "./Componentes/About";
 import Resultados from "./Componentes/Resultados";
 import Favoritos from "./Componentes/Favoritos";
 
 function App() {
-  
+  const [favourites, setFavourites] = useState([]);
+
+  useEffect(() => {
+    let favInLocal = localStorage.getItem("favs");
+
+    if (favInLocal != null) {
+      const favsArray = JSON.parse(favInLocal);
+      setFavourites(favsArray);
+    }
+    let loggedIn = sessionStorage.getItem("token");
+    console.log(loggedIn);
+  }, []);
+
+  const favouritesCount = favourites.length;
+
   const addOrRemoveFromFavs = (e) => {
     const favMovies = localStorage.getItem("favs");
 
@@ -19,10 +32,8 @@ function App() {
 
     if (favMovies === null) {
       tempMoviesInFavs = [];
-      console.log("no hay nada en el localStorage");
     } else {
       tempMoviesInFavs = JSON.parse(favMovies);
-      console.log("Hay algo en el localStorage");
     }
 
     const btn = e.currentTarget;
@@ -44,37 +55,43 @@ function App() {
     if (!movieIsInArray) {
       tempMoviesInFavs.push(movieData);
       localStorage.setItem("favs", JSON.stringify(tempMoviesInFavs));
-      console.log("peliicula agregada");
+      setFavourites(tempMoviesInFavs);
     } else {
       let movieLeft = tempMoviesInFavs.filter((oneMovie) => {
         return oneMovie.id !== movieData.id;
       });
       localStorage.setItem("favs", JSON.stringify(movieLeft));
-      console.log("pelicula eliminada");
+      setFavourites(movieLeft);
     }
   };
 
   return (
     <div className="App">
       <header className="App-header">
-      
         <Header></Header>
         <Routes>
-         
           <Route exact path="/" element={<Login />}></Route>
-          <Route path="/Favoritos" element={<Favoritos/>}></Route>
-          <Route path="/Info" element={<Info/>}></Route>
           <Route
-            path="/Listado"
+            path="/favoritos"
+            element={
+              <Favoritos
+                favouritesCount={favouritesCount}
+                favourites={favourites}
+                addOrRemoveFromFavs={addOrRemoveFromFavs}
+              />
+            }
+          ></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route
+            path="/listado"
             element={<Listado addOrRemoveFromFavs={addOrRemoveFromFavs} />}
           ></Route>
           <Route
-            path="/Resultados/:movieTitle"
-            element={<Resultados />}
+            path="/resultados/:movieTitle"
+            element={<Resultados addOrRemoveFromFavs={addOrRemoveFromFavs} />}
           ></Route>
-          <Route path="/Details/:movieID" element={<Details />}></Route>
+          <Route path="/details/:movieID" element={<Details />}></Route>
         </Routes>
-       
       </header>
     </div>
   );

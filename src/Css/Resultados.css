@@ -1,0 +1,18 @@
+.face {
+  display: flex;
+  justify-content: center;
+}
+.title-rate {
+  display: flex;
+  justify-content: center;
+}
+.results{
+    height: 86vh;
+}
+.results-negative{
+   
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

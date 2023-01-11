@@ -19,7 +19,7 @@ function Listado(props) {
     .then((res) => {
       const apiData = res.data;
       setFilm(apiData.results);
-      console.log(apiData.results);
+      
       })
       .catch((error) => {
         swAlert("Error", "algo salio mal", "warning");
@@ -52,7 +52,7 @@ function Listado(props) {
                   ❤
                 </button>
 
-                <Link to={`/Details/${res.id}`} className="Discover">
+                <Link to={`/details/${res.id}`} className="Discover">
                   Discover
                 </Link>
               </div>
