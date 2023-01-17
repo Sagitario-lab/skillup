@@ -20,7 +20,7 @@ function App() {
       setFavourites(favsArray);
     }
     let loggedIn = sessionStorage.getItem("token");
-    console.log(loggedIn);
+   
   }, []);
 
   const favouritesCount = favourites.length;
