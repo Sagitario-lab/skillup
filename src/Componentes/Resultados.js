@@ -18,7 +18,7 @@ function Resultados(props) {
       })
       
       .catch((error) => {
-        console.log(error);
+   
       });
   }, [movieTitle]);
   
