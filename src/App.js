@@ -11,7 +11,6 @@ import Favoritos from "./Componentes/Favoritos";
 
 function App() {
   const [favourites, setFavourites] = useState([]);
-
   useEffect(() => {
     let favInLocal = localStorage.getItem("favs");
 
@@ -22,9 +21,7 @@ function App() {
     let loggedIn = sessionStorage.getItem("token");
    
   }, []);
-
   const favouritesCount = favourites.length;
-
   const addOrRemoveFromFavs = (e) => {
     const favMovies = localStorage.getItem("favs");
 
@@ -64,7 +61,6 @@ function App() {
       setFavourites(movieLeft);
     }
   };
-
   return (
     <div className="App">
       <header className="App-header">

@@ -20,10 +20,10 @@ function Details() {
       .get(endPoint)
       .then((response) => {
         setMovieData(response.data);
-        console.log(response.data);
+       
       })
       .catch((error) => {
-        console.log(error);
+       // console.log(error);
       });
   };
 
