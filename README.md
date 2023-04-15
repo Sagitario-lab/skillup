@@ -1,1 +1,1 @@
-This is a simple task list app, where you can add , remove, mark as complete or incomplete the tasks that you write in the input.
+In this web app, you can search, mark as favourites any film that you looked for, and see a little description about it as well. 
